@@ -1,0 +1,251 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x7c901010, pid=2136, tid=2384
+#
+# JRE version: 7.0
+# Java VM: Java HotSpot(TM) Client VM (20.0-b01 mixed mode, sharing windows-x86 )
+# Problematic frame:
+# C  [ntdll.dll+0x1010]
+#
+# If you would like to submit a bug report, please visit:
+#   http://java.sun.com/webapps/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0305d400):  JavaThread "AWT-EventQueue-0" [_thread_in_native, id=2384, stack(0x03240000,0x03290000)]
+
+siginfo: ExceptionCode=0xc0000005, reading address 0x00000018
+
+Registers:
+EAX=0x00000004, EBX=0x0328f670, ECX=0x7ffac000, EDX=0x00000004
+ESP=0x0328f60c, EBP=0x0328f624, ESI=0x00000000, EDI=0x036714e8
+EIP=0x7c901010, EFLAGS=0x00010297
+
+Register to memory mapping:
+
+EAX=0x00000004
+0x00000004 is pointing to unknown location
+
+EBX=0x0328f670
+0x0328f670 is pointing into the stack for thread: 0x0305d400
+"AWT-EventQueue-0" prio=6 tid=0x0305d400 nid=0x950 runnable [0x0328f000]
+   java.lang.Thread.State: RUNNABLE
+
+ECX=0x7ffac000
+0x7ffac000 is pointing to unknown location
+
+EDX=0x00000004
+0x00000004 is pointing to unknown location
+
+ESP=0x0328f60c
+0x0328f60c is pointing into the stack for thread: 0x0305d400
+"AWT-EventQueue-0" prio=6 tid=0x0305d400 nid=0x950 runnable [0x0328f000]
+   java.lang.Thread.State: RUNNABLE
+
+EBP=0x0328f624
+0x0328f624 is pointing into the stack for thread: 0x0305d400
+"AWT-EventQueue-0" prio=6 tid=0x0305d400 nid=0x950 runnable [0x0328f000]
+   java.lang.Thread.State: RUNNABLE
+
+ESI=0x00000000
+0x00000000 is pointing to unknown location
+
+EDI=0x036714e8
+0x036714e8 is pointing to unknown location
+
+
+Top of Stack: (sp=0x0328f60c)
+0x0328f60c:   74355a16 00000004 0367150c 7432139f
+0x0328f61c:   0367150c 00000000 0328f63c 7432a244
+0x0328f62c:   0367150c 74350000 0305d518 00000000
+0x0328f63c:   0328f650 7432a653 02bbd0c0 0305d518
+0x0328f64c:   328c69d8 0328f668 6d3811cb 036714e8
+0x0328f65c:   0328f670 0305d400 328c69d8 0328f6ac
+0x0328f66c:   00929fc7 00000000 0328f6c8 036714e8
+0x0328f67c:   00000000 0328f6bc 6db164ad 3777d528 
+
+Instructions: (pc=0x7c901010)
+0x7c901000:   90 90 90 90 90 64 8b 0d 18 00 00 00 8b 54 24 04
+0x7c901010:   83 7a 14 00 75 4f f0 ff 42 04 75 19 8b 41 24 89 
+
+
+Stack: [0x03240000,0x03290000],  sp=0x0328f60c,  free space=317k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [ntdll.dll+0x1010]
+C  [ODBC32.dll+0xa244]
+C  [ODBC32.dll+0xa653]
+C  [JdbcOdbc.dll+0x11cb]
+j  sun.jdbc.odbc.JdbcOdbc.allocConnect(J[B)J+0
+j  sun.jdbc.odbc.JdbcOdbc.SQLAllocConnect(J)J+30
+j  sun.jdbc.odbc.JdbcOdbcDriver.allocConnection(J)J+6
+j  sun.jdbc.odbc.JdbcOdbcConnection.initialize(Ljava/lang/String;Ljava/util/Properties;I)V+37
+j  sun.jdbc.odbc.JdbcOdbcDriver.connect(Ljava/lang/String;Ljava/util/Properties;)Ljava/sql/Connection;+129
+j  java.sql.DriverManager.getConnection(Ljava/lang/String;Ljava/util/Properties;Ljava/lang/ClassLoader;)Ljava/sql/Connection;+210
+j  java.sql.DriverManager.getConnection(Ljava/lang/String;)Ljava/sql/Connection;+15
+j  TextPanel.paint(Ljava/awt/Graphics;)V+23
+j  sun.awt.RepaintArea.paintComponent(Ljava/awt/Component;Ljava/awt/Graphics;)V+6
+j  sun.awt.RepaintArea.paint(Ljava/lang/Object;Z)V+326
+j  sun.awt.windows.WComponentPeer.handleEvent(Ljava/awt/AWTEvent;)V+155
+j  java.awt.Component.dispatchEventImpl(Ljava/awt/AWTEvent;)V+869
+j  java.awt.Component.dispatchEvent(Ljava/awt/AWTEvent;)V+2
+j  java.awt.EventQueue.dispatchEvent(Ljava/awt/AWTEvent;)V+46
+j  java.awt.EventDispatchThread.pumpOneEventForFilters(I)Z+245
+j  java.awt.EventDispatchThread.pumpEventsForFilter(ILjava/awt/Conditional;Ljava/awt/EventFilter;)V+35
+j  java.awt.EventDispatchThread.pumpEventsForHierarchy(ILjava/awt/Conditional;Ljava/awt/Component;)V+11
+j  java.awt.EventDispatchThread.pumpEvents(ILjava/awt/Conditional;)V+4
+j  java.awt.EventDispatchThread.pumpEvents(Ljava/awt/Conditional;)V+3
+j  java.awt.EventDispatchThread.run()V+9
+v  ~StubRoutines::call_stub
+V  [jvm.dll+0x105f7d]
+V  [jvm.dll+0x1ae9de]
+V  [jvm.dll+0x106146]
+V  [jvm.dll+0x1061a6]
+V  [jvm.dll+0x13d50e]
+V  [jvm.dll+0x21735f]
+V  [jvm.dll+0x1ae389]
+C  [msvcr100.dll+0x5c6de]
+C  [msvcr100.dll+0x5c788]
+C  [kernel32.dll+0xb50b]
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  sun.jdbc.odbc.JdbcOdbc.allocConnect(J[B)J+0
+j  sun.jdbc.odbc.JdbcOdbc.SQLAllocConnect(J)J+30
+j  sun.jdbc.odbc.JdbcOdbcDriver.allocConnection(J)J+6
+j  sun.jdbc.odbc.JdbcOdbcConnection.initialize(Ljava/lang/String;Ljava/util/Properties;I)V+37
+j  sun.jdbc.odbc.JdbcOdbcDriver.connect(Ljava/lang/String;Ljava/util/Properties;)Ljava/sql/Connection;+129
+j  java.sql.DriverManager.getConnection(Ljava/lang/String;Ljava/util/Properties;Ljava/lang/ClassLoader;)Ljava/sql/Connection;+210
+j  java.sql.DriverManager.getConnection(Ljava/lang/String;)Ljava/sql/Connection;+15
+j  TextPanel.paint(Ljava/awt/Graphics;)V+23
+j  sun.awt.RepaintArea.paintComponent(Ljava/awt/Component;Ljava/awt/Graphics;)V+6
+j  sun.awt.RepaintArea.paint(Ljava/lang/Object;Z)V+326
+j  sun.awt.windows.WComponentPeer.handleEvent(Ljava/awt/AWTEvent;)V+155
+j  java.awt.Component.dispatchEventImpl(Ljava/awt/AWTEvent;)V+869
+j  java.awt.Component.dispatchEvent(Ljava/awt/AWTEvent;)V+2
+j  java.awt.EventQueue.dispatchEvent(Ljava/awt/AWTEvent;)V+46
+j  java.awt.EventDispatchThread.pumpOneEventForFilters(I)Z+245
+j  java.awt.EventDispatchThread.pumpEventsForFilter(ILjava/awt/Conditional;Ljava/awt/EventFilter;)V+35
+j  java.awt.EventDispatchThread.pumpEventsForHierarchy(ILjava/awt/Conditional;Ljava/awt/Component;)V+11
+j  java.awt.EventDispatchThread.pumpEvents(ILjava/awt/Conditional;)V+4
+j  java.awt.EventDispatchThread.pumpEvents(Ljava/awt/Conditional;)V+3
+j  java.awt.EventDispatchThread.run()V+9
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x03086c00 JavaThread "TimerQueue" daemon [_thread_blocked, id=4008, stack(0x03480000,0x034d0000)]
+  0x003a6c00 JavaThread "DestroyJavaVM" [_thread_blocked, id=564, stack(0x008c0000,0x00910000)]
+=>0x0305d400 JavaThread "AWT-EventQueue-0" [_thread_in_native, id=2384, stack(0x03240000,0x03290000)]
+  0x02bd3000 JavaThread "AWT-Windows" daemon [_thread_in_native, id=2408, stack(0x02f30000,0x02f80000)]
+  0x02bd1800 JavaThread "AWT-Shutdown" [_thread_blocked, id=2092, stack(0x02ee0000,0x02f30000)]
+  0x02bd0800 JavaThread "Java2D Disposer" daemon [_thread_blocked, id=2356, stack(0x02e90000,0x02ee0000)]
+  0x02ba3800 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=2200, stack(0x02de0000,0x02e30000)]
+  0x02b9d400 JavaThread "C1 CompilerThread0" daemon [_thread_blocked, id=2196, stack(0x02d90000,0x02de0000)]
+  0x02b9b800 JavaThread "Attach Listener" daemon [_thread_blocked, id=3900, stack(0x02d40000,0x02d90000)]
+  0x02b9a400 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=2272, stack(0x02cf0000,0x02d40000)]
+  0x02b95800 JavaThread "Finalizer" daemon [_thread_blocked, id=2164, stack(0x02ca0000,0x02cf0000)]
+  0x02b90800 JavaThread "Reference Handler" daemon [_thread_blocked, id=3824, stack(0x02c50000,0x02ca0000)]
+
+Other Threads:
+  0x02b8f000 VMThread [stack: 0x02c00000,0x02c50000] [id=424]
+  0x02bae400 WatcherThread [stack: 0x02e30000,0x02e80000] [id=784]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ def new generation   total 9728K, used 4238K [0x22990000, 0x23410000, 0x27e30000)
+  eden space 8704K,  48% used [0x22990000, 0x22db3b70, 0x23210000)
+  from space 1024K,   0% used [0x23210000, 0x23210000, 0x23310000)
+  to   space 1024K,   0% used [0x23310000, 0x23310000, 0x23410000)
+ tenured generation   total 21464K, used 12878K [0x27e30000, 0x29326000, 0x32790000)
+   the space 21464K,  59% used [0x27e30000, 0x28ac3810, 0x28ac3a00, 0x29326000)
+ compacting perm gen  total 12288K, used 1796K [0x32790000, 0x33390000, 0x36790000)
+   the space 12288K,  14% used [0x32790000, 0x32951158, 0x32951200, 0x33390000)
+    ro space 10240K,  55% used [0x36790000, 0x36d11340, 0x36d11400, 0x37190000)
+    rw space 12288K,  53% used [0x37190000, 0x377f2588, 0x377f2600, 0x37d90000)
+
+Dynamic libraries:
+0x00400000 - 0x0042d000 	C:\WINDOWS\system32\java.exe
+0x7c900000 - 0x7c9b0000 	C:\WINDOWS\system32\ntdll.dll
+0x7c800000 - 0x7c8f4000 	C:\WINDOWS\system32\kernel32.dll
+0x77dd0000 - 0x77e6b000 	C:\WINDOWS\system32\ADVAPI32.dll
+0x77e70000 - 0x77f01000 	C:\WINDOWS\system32\RPCRT4.dll
+0x77d40000 - 0x77dd0000 	C:\WINDOWS\system32\USER32.dll
+0x77f10000 - 0x77f56000 	C:\WINDOWS\system32\GDI32.dll
+0x5d090000 - 0x5d127000 	C:\WINDOWS\system32\COMCTL32.dll
+0x76390000 - 0x763ad000 	C:\WINDOWS\system32\IMM32.DLL
+0x78aa0000 - 0x78b5e000 	C:\Program Files\Java\jre7\bin\msvcr100.dll
+0x6d970000 - 0x6dc72000 	C:\Program Files\Java\jre7\bin\client\jvm.dll
+0x76b40000 - 0x76b6d000 	C:\WINDOWS\system32\WINMM.dll
+0x6d900000 - 0x6d90c000 	C:\Program Files\Java\jre7\bin\verify.dll
+0x6d340000 - 0x6d35f000 	C:\Program Files\Java\jre7\bin\java.dll
+0x6d2b0000 - 0x6d2b8000 	C:\Program Files\Java\jre7\bin\hpi.dll
+0x76bf0000 - 0x76bfb000 	C:\WINDOWS\system32\PSAPI.DLL
+0x6d950000 - 0x6d963000 	C:\Program Files\Java\jre7\bin\zip.dll
+0x6d000000 - 0x6d13a000 	C:\Program Files\Java\jre7\bin\awt.dll
+0x77120000 - 0x771ac000 	C:\WINDOWS\system32\OLEAUT32.dll
+0x77c10000 - 0x77c68000 	C:\WINDOWS\system32\msvcrt.dll
+0x774e0000 - 0x7761c000 	C:\WINDOWS\system32\ole32.dll
+0x5ad70000 - 0x5ada8000 	C:\WINDOWS\system32\uxtheme.dll
+0x74720000 - 0x7476b000 	C:\WINDOWS\system32\MSCTF.dll
+0x755c0000 - 0x755ee000 	C:\WINDOWS\system32\msctfime.ime
+0x7c9c0000 - 0x7d1d4000 	C:\WINDOWS\system32\SHELL32.dll
+0x77f60000 - 0x77fd6000 	C:\WINDOWS\system32\SHLWAPI.dll
+0x773d0000 - 0x774d2000 	C:\WINDOWS\WinSxS\x86_Microsoft.Windows.Common-Controls_6595b64144ccf1df_6.0.2600.2180_x-ww_a84f1ff9\comctl32.dll
+0x6d280000 - 0x6d2a9000 	C:\Program Files\Java\jre7\bin\fontmanager.dll
+0x10000000 - 0x10019000 	C:\WINDOWS\system32\btmmhook.dll
+0x76fd0000 - 0x7704f000 	C:\WINDOWS\system32\CLBCATQ.DLL
+0x77050000 - 0x77115000 	C:\WINDOWS\system32\COMRes.dll
+0x77c00000 - 0x77c08000 	C:\WINDOWS\system32\VERSION.dll
+0x6d670000 - 0x6d686000 	C:\Program Files\Java\jre7\bin\net.dll
+0x71ab0000 - 0x71ac7000 	C:\WINDOWS\system32\WS2_32.dll
+0x71aa0000 - 0x71aa8000 	C:\WINDOWS\system32\WS2HELP.dll
+0x6d690000 - 0x6d69f000 	C:\Program Files\Java\jre7\bin\nio.dll
+0x6d8a0000 - 0x6d8d1000 	C:\Program Files\Java\jre7\bin\t2k.dll
+0x034d0000 - 0x034e2000 	C:\Program Files\WIDCOMM\Bluetooth Software\btkeyind.dll
+0x6d380000 - 0x6d38e000 	C:\Program Files\Java\jre7\bin\JdbcOdbc.dll
+0x74320000 - 0x7435d000 	C:\WINDOWS\system32\ODBC32.dll
+0x763b0000 - 0x763f9000 	C:\WINDOWS\system32\comdlg32.dll
+0x20000000 - 0x20017000 	C:\WINDOWS\system32\odbcint.dll
+0x78130000 - 0x781cb000 	C:\WINDOWS\WinSxS\x86_Microsoft.VC80.CRT_1fc8b3b9a1e18e3b_8.0.50727.762_x-ww_6b128700\MSVCR80.dll
+0x03830000 - 0x04848000 	C:\Program Files\Common Files\Microsoft Shared\office12\mso.dll
+0x04860000 - 0x04b26000 	C:\WINDOWS\system32\msi.dll
+0x04f00000 - 0x050ab000 	C:\Program Files\Common Files\Microsoft Shared\OFFICE12\ACECORE.DLL
+0x7c420000 - 0x7c4a7000 	C:\WINDOWS\WinSxS\x86_Microsoft.VC80.CRT_1fc8b3b9a1e18e3b_8.0.50727.762_x-ww_6b128700\MSVCP80.dll
+0x050c0000 - 0x05152000 	C:\Program Files\Common Files\Microsoft Shared\OFFICE12\1033\ACEWSTR.DLL
+0x77fe0000 - 0x77ff1000 	C:\WINDOWS\system32\Secur32.dll
+0x052c0000 - 0x05914000 	C:\Program Files\Common Files\Microsoft Shared\OFFICE12\MSORES.DLL
+0x05920000 - 0x062fd000 	C:\Program Files\Common Files\Microsoft Shared\office12\1033\MSOINTL.DLL
+0x6d480000 - 0x6d4a5000 	C:\Program Files\Java\jre7\bin\jpeg.dll
+
+VM Arguments:
+java_command: call
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\Sun\SDK\jdk\bin;C:\Program Files\Microsoft SQL Server\90\DTS\Binn\;C:\Program Files\Microsoft SQL Server\90\Tools\binn\;C:\Program Files\Microsoft SQL Server\90\Tools\Binn\VSShell\Common7\IDE\;C:\Program Files\Microsoft Visual Studio 8\Common7\IDE\PrivateAssemblies\;C:\Program Files\Samsung\Samsung PC Studio 3\;C:\j2sdk1.4.1_01\bin
+USERNAME=PR@V@l
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=x86 Family 6 Model 15 Stepping 13, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows XP Build 2600 Service Pack 2
+
+CPU:total 2 (2 cores per cpu, 1 threads per core) family 6 model 15 stepping 13, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3
+
+Memory: 4k page, physical 1039596k(519032k free), swap 2500812k(2081724k free)
+
+vm_info: Java HotSpot(TM) Client VM (20.0-b01) for windows-x86 JRE (1.7.0-ea-b113), built on Oct  7 2010 03:09:04 by "java_re" with unknown MS VC++:1600
+
+time: Tue May 03 21:26:52 2011
+elapsed time: 9 seconds
+
